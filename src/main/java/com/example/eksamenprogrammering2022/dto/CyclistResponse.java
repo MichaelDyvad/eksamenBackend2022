@@ -18,8 +18,9 @@ public class CyclistResponse {
     private int age;
     private int mountainPoints;
     private int spurtPoints;
-    private int shirt;
-    private int cyclingTeam;
+    private String shirt;
+    private String teamName;
+    private int teamNumber;
 
     public CyclistResponse(Cyclist body){
         this.id = body.getId();
@@ -27,8 +28,9 @@ public class CyclistResponse {
         this.age = body.getAge();
         this.mountainPoints = body.getMountainPoints();
         this.spurtPoints = body.getSpurtPoints();
-        this.shirt = body.getShirt().getId();
-        this.cyclingTeam = body.getCyclingTeam().getId();
+        this.shirt = body.getShirt().getType();
+        this.teamName = body.getCyclingTeam().getName();
+        this.teamNumber = body.getCyclingTeam().getId();
     }
 
     public static List<CyclistResponse> getCyclistFromEntity(List<Cyclist> cyclists){

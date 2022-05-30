@@ -21,4 +21,15 @@ public class CyclingTeam {
 
     @OneToMany(mappedBy = "cyclingTeam", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Set<Cyclist> cyclists = new HashSet<>();
+
+    public CyclingTeam(String name) {
+        this.name = name;
+    }
+
+    public void addCyclists(Set<Cyclist> cyclists){
+        this.cyclists.addAll(cyclists);
+        for(Cyclist cyclist: cyclists){
+            cyclist.setCyclingTeam(this);
+        }
+    }
 }
