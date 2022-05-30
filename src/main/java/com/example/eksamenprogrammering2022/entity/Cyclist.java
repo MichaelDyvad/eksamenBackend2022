@@ -26,6 +26,8 @@ public class Cyclist {
 
     private int time;
 
+    private String country;
+
     @OneToOne()
     @JoinColumn(name="shirt_id", referencedColumnName = "id")
     private Shirt shirt;
@@ -33,13 +35,14 @@ public class Cyclist {
     @ManyToOne()
     private CyclingTeam cyclingTeam;
 
-    public Cyclist(String name, int age, int mountainPoints, int spurtPoints, Shirt shirt, int time) {
+    public Cyclist(String name, int age, int mountainPoints, int spurtPoints, Shirt shirt, int time, String country) {
         this.name = name;
         this.age = age;
         this.mountainPoints = mountainPoints;
         this.spurtPoints = spurtPoints;
         this.shirt = shirt;
         this.time = time;
+        this.country = country;
     }
 
     public Cyclist(CyclistRequest body){
@@ -50,5 +53,6 @@ public class Cyclist {
         this.shirt = body.getShirt();
         this.cyclingTeam = body.getCyclingTeam();
         this.time = body.getTime();
+        this.country = body.getCountry();
     }
 }

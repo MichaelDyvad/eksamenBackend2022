@@ -34,12 +34,12 @@ public class MakeTestData implements ApplicationRunner {
         CyclingTeam cyclingTeam2 = new CyclingTeam("TeamDSM");
         CyclingTeam cyclingTeam3 = new CyclingTeam("Cofidis");
 
-        Shirt shirt1 = new Shirt("yellow");
-        Shirt shirt2 = new Shirt("white");
-        Shirt shirt3 = new Shirt("green");
-        Shirt shirt4 = new Shirt("mountainshirt");
+        Shirt shirt1 = new Shirt("Gul");
+        Shirt shirt2 = new Shirt("Hvid");
+        Shirt shirt3 = new Shirt("Grøn");
+        Shirt shirt4 = new Shirt("Bjergtrøjen");
 
-        Shirt noShirt = new Shirt("noshirt");
+        Shirt noShirt = new Shirt(" ");
         shirtRepository.save(noShirt);
         shirtRepository.save(shirt1);
         shirtRepository.save(shirt2);
@@ -47,24 +47,38 @@ public class MakeTestData implements ApplicationRunner {
         shirtRepository.save(shirt4);
 
 
-        Cyclist cyclist1 = new Cyclist("FERRON Valentin", 26, 20, 15, shirt4, 160);
-        Cyclist cyclist2 = new Cyclist("DOUBEY Fabien", 24, 15, 15, shirt1, 120);
-        Cyclist cyclist3 = new Cyclist("BOL Cees", 24, 12, 20, shirt3, 140 );
-        Cyclist cyclist4 = new Cyclist("DEGENKOLB John", 22, 11, 15, shirt2, 110);
-        Cyclist cyclist5 = new Cyclist("PÉRICHON Pierre-Luc", 22, 10, 10, noShirt, 160);
-        Cyclist cyclist6 = new Cyclist("MARTIN Guillaume", 22, 5, 5, noShirt, 165);
+        Cyclist cyclist1 = new Cyclist("FERRON Valentin", 26, 20, 15, shirt4, 160, "Italien");
+        Cyclist cyclist2 = new Cyclist("DOUBEY Fabien", 24, 15, 15, shirt2, 120, "Italien");
+        Cyclist cyclist3 = new Cyclist("VUILLERMOZ Alexis", 23, 5, 5, noShirt, 131, "Italien");
+        Cyclist cyclist4 = new Cyclist("JOUSSEAUME Alan", 25,5, 5, noShirt, 132, "Italien");
+        Cyclist cyclist5 = new Cyclist("SAGAN Peter", 227, 5, 5, noShirt, 133, "Italien");
 
-        cyclingTeam1.addCyclists(Set.of(cyclist1, cyclist2));
-        cyclingTeam2.addCyclists(Set.of(cyclist3, cyclist4));
-        cyclingTeam3.addCyclists(Set.of(cyclist5, cyclist6));
+        Cyclist cyclist6 = new Cyclist("BOL Cees", 24, 12, 20, shirt3, 140, "Danmark");
+        Cyclist cyclist7 = new Cyclist("DEGENKOLB John", 27, 11, 15, shirt1, 110, "Danmark");
+        Cyclist cyclist8 = new Cyclist("EEKHOFF Nils", 23, 7, 7, noShirt, 171, "Danmark");
+        Cyclist cyclist9 = new Cyclist("BARDET Romain", 28, 7, 7, noShirt, 164, "Danmark");
+        Cyclist cyclist10 = new Cyclist("KRAGH ANDERSEN Søren", 25, 7, 7, noShirt, 172, "Danmark");
+
+        Cyclist cyclist11 = new Cyclist("PÉRICHON Pierre-Luc", 22, 10, 10, noShirt, 162, "Frankrig");
+        Cyclist cyclist12 = new Cyclist("MARTIN Guillaume", 21, 2, 4, noShirt, 154, "Frankrig");
+        Cyclist cyclist13 = new Cyclist("COQUARD Bryan", 19, 3, 5, noShirt, 153, "Frankrig");
+        Cyclist cyclist14 = new Cyclist("IZAGIRRE Ion", 28, 2, 5, noShirt, 152,"Frankrig");
+        Cyclist cyclist15 = new Cyclist("THOMAS Benjamin", 32, 1, 5, noShirt, 150, "Frankrig");
+
+
+
+
+
+
+        cyclingTeam1.addCyclists(Set.of(cyclist1, cyclist2, cyclist3, cyclist4, cyclist5));
+        cyclingTeam2.addCyclists(Set.of(cyclist6, cyclist7, cyclist8, cyclist9, cyclist10));
+        cyclingTeam3.addCyclists(Set.of(cyclist11, cyclist12, cyclist13, cyclist14, cyclist15));
+
 
         cyclingTeamRepository.saveAll(List.of(
            cyclingTeam1,
            cyclingTeam2,
            cyclingTeam3));
-
-
-
 
     }
 
