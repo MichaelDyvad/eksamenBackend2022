@@ -34,8 +34,8 @@ class CyclistRepositoryTest {
 
         Shirt noShirt = new Shirt("noshirt");
         shirtRepository.save(noShirt);
-        Cyclist cyclist1 = new Cyclist("FERRON Valentin", 26, 20, 15, noShirt, 120);
-        Cyclist cyclist2 = new Cyclist("DOUBEY Fabien", 24, 15, 15, noShirt, 120);
+        Cyclist cyclist1 = new Cyclist("FERRON Valentin", 26, 20, 15, noShirt, 120, "Slovenien");
+        Cyclist cyclist2 = new Cyclist("DOUBEY Fabien", 24, 15, 15, noShirt, 120, "Danmark");
 
 
         cyclingTeam1.addCyclists(Set.of(cyclist1, cyclist2));

@@ -22,6 +22,7 @@ public class CyclistResponse {
     private String teamName;
     private int cyclingTeam;
     private int time;
+    private String country;
 
     public CyclistResponse(Cyclist body){
         this.id = body.getId();
@@ -33,6 +34,7 @@ public class CyclistResponse {
         this.teamName = body.getCyclingTeam().getName();
         this.cyclingTeam = body.getCyclingTeam().getId();
         this.time = body.getTime();
+        this.country = body.getCountry();
     }
 
     public static List<CyclistResponse> getCyclistFromEntity(List<Cyclist> cyclists){
