@@ -17,4 +17,8 @@ public class Shirt {
     private int id;
 
     private String type;
+
+    public Shirt(String type) {
+        this.type = type;
+    }
 }
