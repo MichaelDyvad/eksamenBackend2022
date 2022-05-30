@@ -16,6 +16,7 @@ public class CyclistRequest {
     int age;
     int mountainPoints;
     int spurtPoints;
+    int time;
     Shirt shirt;
     CyclingTeam cyclingTeam;
 }

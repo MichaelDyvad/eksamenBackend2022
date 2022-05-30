@@ -44,6 +44,7 @@ public class CyclistService {
         cyclist.setSpurtPoints(body.getSpurtPoints());
         cyclist.setShirt(body.getShirt());
         cyclist.setCyclingTeam(body.getCyclingTeam());
+        cyclist.setTime(body.getTime());
         cyclistRepository.save(cyclist);
         return new CyclistResponse(cyclist);
     }
