@@ -48,4 +48,12 @@ public class CyclistController {
     public void deleteCyclist(@PathVariable int id){
         cyclistService.deleteCyclist(id);
     }
+
+
+    @PatchMapping("/{id}")
+    public void editShirtOnCyclist(@RequestBody CyclistRequest body, @PathVariable int id){
+        cyclistService.editShirt(body, id);
+    }
 }
+
+

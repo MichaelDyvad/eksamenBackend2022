@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Setter
 @Getter
 @NoArgsConstructor
+//Cyclist entity class
 public class Cyclist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

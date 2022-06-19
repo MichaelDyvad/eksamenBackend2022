@@ -36,6 +36,7 @@ public class CyclistService {
         cyclistRepository.save(new Cyclist(body));
     }
 
+    //editcyclist kan godt være void, fordi metoden ikke behøver at returnerer en værdi
     public CyclistResponse editCyclist(CyclistRequest body, int cyclistId){
         Cyclist cyclist = cyclistRepository.findById(cyclistId).orElseThrow(()-> new RuntimeException());
         cyclist.setName(body.getName());
@@ -53,4 +54,12 @@ public class CyclistService {
     public void deleteCyclist(int cyclistId){
         cyclistRepository.deleteById(cyclistId);
     }
+
+    public void editShirt(CyclistRequest body, int cyclistId){
+        Cyclist cyclist = cyclistRepository.findById(cyclistId).orElseThrow(()-> new RuntimeException("No cyclist with that id"));
+        cyclist.setShirt(body.getShirt());
+        cyclistRepository.save(cyclist);
+    }
 }
+
+
