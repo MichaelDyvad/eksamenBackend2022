@@ -1,0 +1,1 @@
+[![Build and deploy JAR app to Azure Web App - TourDeFranceWebApp](https://github.com/MichaelDyvad/eksamenBackend2022/actions/workflows/master_tourdefrancewebapp.yml/badge.svg)](https://github.com/MichaelDyvad/eksamenBackend2022/actions/workflows/master_tourdefrancewebapp.yml)
